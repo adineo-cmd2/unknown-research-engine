@@ -1,20 +1,121 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 ---
-<BaseLayout title="Not what's known. What isn't.">
-<h1 class="serif-h text-4xl">Not what's known. What isn't.</h1>
-<p class="mt-4 max-w-2xl">Give the Unknown Engine a topic — plus optional papers — and it maps the open questions, contested claims, and methodological gaps in your literature, each tied to a source sentence for your review.</p>
-<div class="mt-6 grid gap-3 md:grid-cols-3">
-<div class="border border-slate-200 p-4"><p class="font-bold">1. Analyse a topic</p><p class="text-sm opacity-70">Topic only, or upload PDFs/TXT.</p></div>
-<div class="border border-slate-200 p-4"><p class="font-bold">2. Map the gaps</p><p class="text-sm opacity-70">Six categories, confidence scored.</p></div>
-<div class="border border-slate-200 p-4"><p class="font-bold">3. Draw the boundary</p><p class="text-sm opacity-70">Established vs unknown, side by side.</p></div>
+<BaseLayout title="Not what’s known. What isn’t." description="Give the Unknown Engine a topic — plus optional papers — and it maps the open questions, contested claims and methodological gaps in your literature, tied to source sentences.">
+<section class="hero">
+  <span class="hero-badge">open questions · contested claims · method gaps</span>
+  <h1 class="display-1">Not what&rsquo;s known.<br/><span class="grad-text">What isn&rsquo;t.</span></h1>
+  <p class="lead">Give the Unknown Engine a topic — plus optional papers — and it maps the open questions, contested claims, and methodological gaps in your literature, each tied to a source sentence for your review.</p>
+  <div class="hero-ctas">
+<a href={`${base}/analyse`} class="btn btn-accent btn-lg">Analyse a topic</a>
+<a href={`${base}/gap-map`} class="btn btn-ghost btn-lg">See a sample gap map</a>
+  </div>
+  <div class="hero-meta">
+<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 12 19 5"/></svg>Six gap categories</span>
+<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Every gap tied to a source</span>
+<span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>Topic-only or with papers</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid-3">
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 12 19 5"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Six gap categories</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">Open questions, contested claims, methodological gaps, replication needs and more.</p>
+</article>
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Source-tied</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">Every gap points at the exact sentence that exposes it.</p>
+</article>
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Gap map</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">All gaps on one grid, confidence-scored per category.</p>
+</article>
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18M16 3v18M3 8h5M3 16h5M16 12h5M12 5l4 3-4 3"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Known / unknown boundary</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">Established knowledge and open frontier, side by side.</p>
+</article>
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Session history</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">Every analysis saved — reopen and reread the frontier later.</p>
+</article>
+<article class="card card-hover p-5 reveal">
+  <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg></div>
+  <h3 class="text-[1.02rem] font-semibold" style="letter-spacing:-0.01em">Papers optional</h3>
+  <p class="mt-2 text-sm leading-relaxed" style="color: var(--ink-soft)">Topic-only works; upload PDFs/TXT to ground the analysis deeper.</p>
+</article>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="section-head">
+    <p class="eyebrow">Showcase</p>
+    <h2 class="section-title">Example gap map</h2>
+    <p class="lead">Four of the six categories, with the sentences that triggered them.</p>
+  </div>
+
+<div class="grid gap-3 md:grid-cols-2" style="max-width: 52rem; margin: 0 auto">
+  <div class="card card-hover p-5"><p class="eyebrow">OPEN_QUESTION</p>
+    <blockquote class="serif-quote mt-2 text-[0.95rem] leading-relaxed">“Further research is needed on long-term sleep restriction effects.”</blockquote>
+    <p class="mono-n mt-2 text-xs" style="color: var(--ink-soft)">confidence 0.8</p></div>
+  <div class="card card-hover p-5"><p class="eyebrow">CONTESTED_CLAIM</p>
+    <blockquote class="serif-quote mt-2 text-[0.95rem] leading-relaxed">“Caffeine improves memory consolidation — contradicted across two sources.”</blockquote>
+    <p class="mono-n mt-2 text-xs" style="color: var(--ink-soft)">confidence 0.7</p></div>
+  <div class="card card-hover p-5"><p class="eyebrow">METHODOLOGICAL_GAP</p>
+    <blockquote class="serif-quote mt-2 text-[0.95rem] leading-relaxed">“No control group was used in the pilot study design.”</blockquote>
+    <p class="mono-n mt-2 text-xs" style="color: var(--ink-soft)">confidence 0.65</p></div>
+  <div class="card card-hover p-5"><p class="eyebrow">REPLICATION_NEEDED</p>
+    <blockquote class="serif-quote mt-2 text-[0.95rem] leading-relaxed">“A single small-sample trial supports the headline effect.”</blockquote>
+    <p class="mono-n mt-2 text-xs" style="color: var(--ink-soft)">confidence 0.6</p></div>
 </div>
-<h2 class="serif-h mt-8 text-2xl">Example gap map</h2>
-<div class="mt-3 grid gap-3 md:grid-cols-2">
-<article class="border border-slate-200 p-4"><p class="mono-n text-xs text-teal">OPEN_QUESTION</p><blockquote class="serif-quote mt-2">“Further research is needed on long-term sleep restriction effects.”</blockquote><p class="mono-n mt-1 text-xs opacity-70">confidence 0.8</p></article>
-<article class="border border-slate-200 p-4"><p class="mono-n text-xs text-teal">CONTESTED_CLAIM</p><blockquote class="serif-quote mt-2">“Caffeine improves memory consolidation — contradicted across two sources.”</blockquote><p class="mono-n mt-1 text-xs opacity-70">confidence 0.7</p></article>
-<article class="border border-slate-200 p-4"><p class="mono-n text-xs text-teal">METHODOLOGICAL_GAP</p><blockquote class="serif-quote mt-2">“No control group was used in the pilot study design.”</blockquote><p class="mono-n mt-1 text-xs opacity-70">confidence 0.65</p></article>
-<article class="border border-slate-200 p-4"><p class="mono-n text-xs text-teal">REPLICATION_NEEDED</p><blockquote class="serif-quote mt-2">“A single small-sample trial supports the headline effect.”</blockquote><p class="mono-n mt-1 text-xs opacity-70">confidence 0.6</p></article>
+
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2 class="section-title">Three steps, no fluff</h2>
+  </div>
+  <div class="grid-3">
+<div class="step reveal">
+  <div class="step-num">01</div>
+  <h3 class="mt-2 text-[1rem] font-semibold">Analyse a topic</h3>
+  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--ink-soft)">Topic only, or upload PDFs/TXT.</p>
 </div>
-<a href="/analyse" class="mt-6 inline-block underline">Analyse your topic</a>
+<div class="step reveal">
+  <div class="step-num">02</div>
+  <h3 class="mt-2 text-[1rem] font-semibold">Map the gaps</h3>
+  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--ink-soft)">Six categories, confidence scored.</p>
+</div>
+<div class="step reveal">
+  <div class="step-num">03</div>
+  <h3 class="mt-2 text-[1rem] font-semibold">Draw the boundary</h3>
+  <p class="mt-1.5 text-sm leading-relaxed" style="color: var(--ink-soft)">Established vs unknown, side by side.</p>
+</div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="note-band">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <p>Gaps are leads, not findings. Verify each gap against the cited source — mock-labelled sources are synthetic, never real citations.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-band reveal">
+    <h2 class="section-title">What does your field not know?</h2>
+    <p class="lead" style="margin: 0.8rem auto 1.8rem">Point the engine at a topic and map the frontier.</p>
+    <a href={`${base}/analyse`} class="btn btn-accent btn-lg">Analyse a topic</a>
+  </div>
+</section>
+
 </BaseLayout>

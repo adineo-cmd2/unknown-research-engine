@@ -4,14 +4,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#ffffff',
-        slateink: '#1e293b',
-        teal: {
-          DEFAULT: '#0f766e',
-          dark: '#115e59',
-          bg: '#ccfbf1',
-        },
-      },
+        "paper": "#ffffff",
+        "slateink": "#17252e",
+        "teal": {
+                "DEFAULT": "#0d7d72",
+                "dark": "#0b5f57",
+                "bg": "#d7f5ef"
+        }
+},
+      fontFamily: {
+        "display": [
+                "'Sora'",
+                "system-ui",
+                "sans-serif"
+        ],
+        "body": [
+                "'Inter'",
+                "system-ui",
+                "sans-serif"
+        ],
+        "mono": [
+                "'JetBrains Mono'",
+                "ui-monospace",
+                "monospace"
+        ]
+},
     },
   },
   plugins: [],

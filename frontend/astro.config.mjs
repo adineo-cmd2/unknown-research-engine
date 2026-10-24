@@ -4,8 +4,10 @@ import tailwind from '@astrojs/tailwind';
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
+  site: 'https://adineo-cmd2.github.io',
+  base: '/unknown-research-engine',
   integrations: [react(), tailwind()],
   server: {
-    port: 4324,
+    port: 4321,
   },
 });
