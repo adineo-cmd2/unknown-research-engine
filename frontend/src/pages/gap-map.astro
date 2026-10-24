@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GapMapGrid from "../components/gapmap/GapMapGrid.tsx";
+---
+<BaseLayout title="Gap map">
+<h1 class="serif-h mb-4 text-2xl">Gap map</h1>
+<GapMapGrid client:visible />
+</BaseLayout>

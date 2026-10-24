@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Settings">
+<h1 class="serif-h mb-4 text-2xl">Settings</h1>
+<div class="border border-slate-200 p-4">
+  <label class="block text-sm font-bold" for="sid">Delete a session by id</label>
+  <div class="mt-1 flex gap-2">
+    <input id="sid" class="border border-slate-300 px-2 py-1" placeholder="Session id" />
+    <button id="del" class="border border-red-700 px-3 py-1 text-sm text-red-700">Delete</button>
+  </div>
+  <p id="msg" class="mt-2 text-sm opacity-70"></p>
+</div>
+<script>
+  import { apiDelete } from '../lib/apiClient';
+  const msg = document.getElementById("msg")!;
+  document.getElementById("del")!.onclick = async () => {
+    const sid = (document.getElementById("sid") as HTMLInputElement).value.trim();
+    if (!sid) { msg.textContent = "Enter a session id."; return; }
+    if (!confirm(`Delete session ${sid}?`)) return;
+    try {
+      await apiDelete(`/api/sessions/${sid}`);
+      msg.textContent = `Session ${sid} deleted.`;
+    } catch (e) {
+      msg.textContent = e instanceof Error ? e.message : 'Delete failed.';
+    }
+  };
+</script>
+</BaseLayout>

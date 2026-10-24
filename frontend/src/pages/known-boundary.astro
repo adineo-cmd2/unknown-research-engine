@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import KnownBoundarySplit from "../components/boundary/KnownBoundarySplit.tsx";
+---
+<BaseLayout title="Known / unknown boundary">
+<h1 class="serif-h mb-4 text-2xl">Known / unknown boundary</h1>
+<KnownBoundarySplit client:visible />
+</BaseLayout>
